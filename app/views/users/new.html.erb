@@ -1,0 +1,33 @@
+<div class="ui two column center aligned grid">
+  <div class="column ui left aligned raised card" id="signup-card">
+    <%=form_for @user, html: {class: "ui form"} do |f|%>
+      <div class="field">
+        <%= f.label :first_name%>
+        <%= f.text_field :first_name%>
+      </div>
+      <div class="field">
+        <%= f.label :last_name%>
+        <%= f.text_field :last_name%>
+      </div>
+      <div class="field">
+        <%= f.label :email%>
+        <%= f.email_field :email%>
+      </div>
+      <div class="field">
+        <%= f.label :password%>
+        <%= f.password_field :password%>
+      </div>
+      <%= f.submit "create account", class: "fluid ui blue button"%>
+    <%end%>
+    <div class="ui horizontal divider"id="divider"> Or </div>
+    <button class="fluid ui facebook button" id="social-button">
+      <i class="facebook icon"></i>
+      Continue using Facebook
+    </button>
+    <button class="fluid ui google plus button" id="social-button">
+      <i class="google icon"></i>
+      Continue using Google
+    </button>
+    <p class="center aligned">Already got an account? Sign in here</p>
+  </div>
+</div>
