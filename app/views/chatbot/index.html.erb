@@ -1,0 +1,33 @@
+<div class="ui two column center aligned grid">
+  <div class="column ui raised card" id="chat-card">
+    <div class="content">
+      <div class="header">
+        <h4 class="ui center aligned teal medium icon header">
+          <i class="circular plane icon"></i>
+          Wanderer
+        </h4>
+      </div>
+    </div>
+    <div class="content chat-window" id="chat-window">
+      <div class="ui one column grid container" id="message-container">
+        <%if logged_in? %>
+          <%=render @messages%>
+        <%end%>
+      </div>
+    </div>
+    <div class="extra content" id="message-box">
+      <%if logged_in? %>
+        <%=form_for(@message, html:{class:"ui reply form"}, url:message_path, remote: true) do |f|%>
+          <div class="field">
+            <div class="ui transparent action input">
+              <%=f.text_area :body, rows:"2", id:"textarea"%>
+              <button class="ui button">Submit</button>
+            </div>
+          </div>
+        <%end%>
+      <%else%>
+        <p>please log in to use this feature!</p>
+      <%end%>
+    </div>
+  </div>
+</div>

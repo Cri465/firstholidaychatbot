@@ -4,6 +4,8 @@ Rails.application.routes.draw do
   get 'signup', to: 'users#new'
   resources :users, except: [ :new ]
   get 'login', to: 'session#new'
+  get 'wanderer', to: 'chatbot#index'
   post 'login', to: 'sessions#create'
   delete "logout", to: "sessions#destroy"
+  post "message", to: 'messages#create'
 end

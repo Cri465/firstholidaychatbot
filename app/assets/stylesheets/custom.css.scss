@@ -6,3 +6,19 @@ body{
   margin:1rem;
   width:16rem;
 }
+
+#sign-up{
+  text-align: center;
+}
+#billboard{
+  width: 100vw;
+  margin-left: calc(50% - 50vw);
+  height:40rem
+}
+
+.masthead h1.ui.header {
+    margin-top: 3em;
+    margin-bottom: 0em;
+    font-size: 4em;
+    font-weight: normal;
+}

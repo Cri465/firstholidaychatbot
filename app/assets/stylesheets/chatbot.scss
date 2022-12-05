@@ -1,0 +1,38 @@
+// Place all the styles related to the chatbot controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: https://sass-lang.com/
+#chat-card{
+  width: 100%;
+  margin-top: 3rem;
+}
+
+.chat-window{
+  height:40rem;
+  overflow-y: auto;
+  padding-top: 1.5rem;
+}
+
+#textarea {
+  resize: none;
+}
+
+#divider{
+  margin-bottom: 0;
+  border: none;
+}
+
+#content-card{
+  padding-bottom: 0;
+  width:100%;
+}
+
+#left-chat{
+  margin-right: 5rem;
+  margin-bottom: 0.5rem;
+  padding-bottom:0.5rem;
+}
+
+#chat-row{
+  padding:0;
+  height: fit-content;
+}
