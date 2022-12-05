@@ -1,0 +1,10 @@
+<% if message.bot == true %>
+  <div class="column" id="chat-row">
+    <div class="right floated center aligned ui right pointing label"id="right-chat">
+    <%else%>
+      <div class="column" id="chat-row">
+        <div class="left floated center aligned ui left pointing label"id="left-chat">
+        <%end%>
+        <%= message.body %>
+      </div>
+    </div>

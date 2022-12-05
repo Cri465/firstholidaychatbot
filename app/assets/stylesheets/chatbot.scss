@@ -9,6 +9,9 @@
 .chat-window{
   height:40rem;
   overflow-y: auto;
+}
+
+#chat-window{
   padding-top: 1.5rem;
 }
 
@@ -28,6 +31,12 @@
 
 #left-chat{
   margin-right: 5rem;
+  margin-bottom: 0.5rem;
+  padding-bottom:0.5rem;
+}
+
+#right-chat{
+  margin-left:5rem;
   margin-bottom: 0.5rem;
   padding-bottom:0.5rem;
 }
