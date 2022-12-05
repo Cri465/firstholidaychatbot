@@ -1,0 +1,37 @@
+<%=link_to "First Holiday", root_path, class:"item" %>
+<a class="item">
+  Chatbot
+</a>
+<div class="right menu">
+  <div class="right menu">
+    <% if logged_in?%>
+      <div class="item">Logged in as <%= current_user.first_name %></div>
+      <%= link_to "Log out", logout_path, method: :delete, class:"item"%>
+    <%else%>
+      <div class="ui dropdown item">
+        Account <i class="dropdown icon"></i>
+        <div class="menu">
+          <%= form_with(scope: :session, url: login_path, class: "ui form", role:"form", local: true, id: "login-form") do |f|%>
+            <div class="field">
+              <%= f.label :email, "Email"%>
+              <%= f.email_field :email, placeholder: "Email"%>
+            </div>
+            <div class="field">
+              <%= f.label :password, "Password"%>
+              <%= f.password_field :password, placeholder:"Password"%>
+            </div>
+            <div class="field">
+              <div class="ui checkbox">
+                <input type="checkbox" tabindex="0" class="hidden">
+                <label>Remember me</label>
+              </div>
+            </div>
+            <%= f.submit "Login", class: "ui submit button fluid"%>
+          <%end%>
+          <div class="ui horizontal divider"id="divider"> Or </div>
+          <%= link_to "Sign up", signup_path, class:"centere aligned link item", id:"sign-up"%>
+        </div>
+      </div>
+    <%end%>
+  </div>
+</div>
