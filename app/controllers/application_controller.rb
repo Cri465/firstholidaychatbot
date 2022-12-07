@@ -22,6 +22,7 @@ class ApplicationController < ActionController::Base
   def last_conversation_active?
     return false unless logged_in?
     return false if current_user.conversations.count.zero? || current_user.last_conversation.messages.count.zero?
+    return false if current_user.last_conversation.unresolved_traits.count.zero?
     return true if TimeDifference.between(current_user.last_conversation.last_message_time, Time.now).in_minutes <= 5
     false
   end

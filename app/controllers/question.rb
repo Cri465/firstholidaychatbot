@@ -98,27 +98,44 @@ class Question
     "A cold climate can offer beautiful landscapes and scenic views",
     "Many people enjoy the cool and refreshing weather of a cold climate for their vacation"
   ]
-  
+  LOCATION_MOUNTAIN_RESPONSES = [
+    "That's great! Mountains are beautiful and peaceful places to visit",
+    "Great idea! They can be really enjoyable and refreshing",
+    "Excellent! There are so many different things you can do on a mountain holiday - hiking, camping, skiing, etc",
+    "There are many beautiful mountain ranges to choose from",
+    "A mountain holiday can be a great way to get away from the hustle and bustle of daily life and reconnect with nature",
+    "I'm sure it will be a memorable and enjoyable trip",
+    "Make sure to bring the proper gear and clothing for your mountain holiday. The weather can be unpredictable at high elevations",
+    "There are many fun and exciting things to do in the mountains",
+    "A mountain holiday can be a great opportunity to try new things and challenge yourself",
+    "Don't forget to take lots of pictures and enjoy the beautiful scenery"
+  ]
+  LOCATION_CITY_RESPONSES = [
+    "Great! These streets will make you feel brand new"
+  ]
+  LOCATION_SEA_RESPONSES = [
+    "Excellent choice. Say hello to spongebob"
+  ]
+
   def self.random_question(traits)
     eval("#{traits.keys.sample.to_s}_questions".upcase).sample
   end
 
-  def self.activity_question
-    ACTIVITY_QUESTIONS.sample
-  end
-
   def self.activity_response(intent)
-    ACTIVITY_ACTIVE_RESPONSES.sample if intent == "activity_active"
-    ACTIVITY_LAZY_RESPONSES.sample if intent == "activity_lazy"
+    return ACTIVITY_ACTIVE_RESPONSES.sample if intent == "activity_active"
+    return ACTIVITY_LAZY_RESPONSES.sample if intent == "activity_lazy"
   end
 
   def self.climate_response(intent)
-    CLIMATE_HOT_RESPONSES.sample if intent == "climate_hot"
-    CLIMATE_MILD_RESPONSES.sample if intent == "climate_mild"
-    CLIMATE_COLD_RESPONSES.sample if intent == "climate_cold"
+    return CLIMATE_HOT_RESPONSES.sample if intent == "climate_hot"
+    return CLIMATE_MILD_RESPONSES.sample if intent == "climate_mild"
+    return CLIMATE_COLD_RESPONSES.sample if intent == "climate_cold"
   end
 
-  def self.setting_response(intent)
+  def self.location_response(intent)
+    return LOCATION_CITY_RESPONSES.sample if intent == "location_city"
+    return LOCATION_SEA_RESPONSES.sample if intent == "location_sea"
+    return LOCATION_MOUNTAIN_RESPONSES.sample if intent == "location_mountain"
   end
 
 end

@@ -5,6 +5,11 @@ class Message < ApplicationRecord
   before_validation :set_attr
   after_save :broadcast
 
+  def suggestions
+    return nil if self[:suggestions].nil?
+    eval self[:suggestions]
+  end
+
   private
 
   def set_attr
@@ -16,8 +21,9 @@ class Message < ApplicationRecord
     ConversationChannel.broadcast_to Message.last.conversation.id, message_render(self)
   end
 
+
+
   def message_render(message)
-    # render(partial: 'messages/reply', locals: { message: "beans" })
     ApplicationController.renderer.render(partial: 'messages/message', locals: { message: message })
   end
 

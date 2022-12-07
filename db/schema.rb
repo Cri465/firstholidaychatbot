@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_12_07_132058) do
+ActiveRecord::Schema.define(version: 2022_12_07_161852) do
 
   create_table "conversations", force: :cascade do |t|
     t.integer "user_id"
@@ -23,10 +23,10 @@ ActiveRecord::Schema.define(version: 2022_12_07_132058) do
   create_table "locations", force: :cascade do |t|
     t.string "hotel_name"
     t.text "description"
-    t.string "tags"
     t.string "geodata"
     t.integer "state", default: 1
     t.integer "star_rating", default: 1
+    t.string "traits", default: "{}"
   end
 
   create_table "messages", force: :cascade do |t|
@@ -36,6 +36,7 @@ ActiveRecord::Schema.define(version: 2022_12_07_132058) do
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.boolean "bot", default: false
+    t.string "suggestions"
     t.index ["conversation_id"], name: "index_messages_on_conversation_id"
     t.index ["user_id"], name: "index_messages_on_user_id"
   end

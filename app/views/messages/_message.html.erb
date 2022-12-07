@@ -8,3 +8,8 @@
         <%= message.body %>
       </div>
     </div>
+    <%if message.suggestions%>
+      <%message.suggestions.each do |suggestion| %>
+        <%=render 'layouts/location_card'%>
+      <%end%>
+    <%end%>
