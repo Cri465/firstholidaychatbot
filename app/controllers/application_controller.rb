@@ -11,6 +11,10 @@ class ApplicationController < ActionController::Base
     !!current_user
   end
 
+  def wit_client
+    @wit_client ||= Wit.new(access_token: ENV["WIT_API_KEY"])
+  end
+
   def current_conversation
     @current_conversation ||= last_conversation_active? ? current_user.last_conversation : Conversation.create(user: current_user)
   end

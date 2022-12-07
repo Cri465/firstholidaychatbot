@@ -1,7 +1,12 @@
-# This file should contain all the record creation needed to seed the database with its default values.
-# The data can then be loaded with the bin/rails db:seed command (or created alongside the database with db:setup).
-#
-# Examples:
-#
-#   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
-#   Character.create(name: 'Luke', movie: movies.first)
+seed_data = File.read(Rails.root.join('db', 'Data Set.csv'))
+seed_data = CSV.parse(seed_data, headers: true, encoding: 'ISO-8859-1')
+
+seed_data.each do |entry|
+  # p entry['Category']
+  location = Location.new
+  location.hotel_name = entry["HotelName"]
+  location.tags = "{Activity: '#{entry['Category']||'nil'}', Climate: '#{entry['TempRating']||'nil'}', Setting: '#{entry['Location']||'nil'}'}"
+  location.geodata = "{City: '#{entry['City']||'nil'}', Country: '#{entry['Country']||'nil'}', Continent: '#{entry['Continent']||'nil'}'}"
+  location.star_rating = entry["StarRating"]
+  location.save!
+end
