@@ -1,0 +1,18 @@
+  <%@locations.each do |location|%>
+  <div class="ui card" id = "location_card">
+    <div class="content">
+      <div class="header"><%= link_to location.hotel_name, "locations/#{location.id}"%></div>
+      <div class="meta"><%= "#{location.geodata[:city]}, #{location.geodata[:country]}, #{location.geodata[:continent]}"%></div>
+      <div class="description">
+        Elliot Fu is a film-maker from New York.
+      </div>
+    </div>
+    <div class="extra content">
+      <div class="right aligned">
+        <%location.star_rating.times do %>
+          <i class="star icon"></i>
+        <%end%>
+      </div>
+    </div>
+  </div>
+<%end%>
