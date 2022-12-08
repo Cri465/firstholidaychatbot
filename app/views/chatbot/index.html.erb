@@ -17,11 +17,11 @@
     </div>
     <div class="extra content" id="message-box">
       <%if logged_in? %>
-        <%=form_for(@message, html:{class:"ui reply form"}, url:message_path, remote: true) do |f|%>
+        <%=form_for(@message, html:{class:"ui reply form", id:"message-form"}, url:message_path, remote: true) do |f|%>
           <div class="field">
             <div class="ui transparent action input">
-              <%=f.text_area :body, rows:"2", id:"textarea"%>
-              <button class="ui button">Submit</button>
+              <%=f.text_field :body, id:"msg", required: true %>
+              <button class="ui button" id="message-submit">Submit</button>
             </div>
           </div>
         <%end%>

@@ -67,7 +67,7 @@ class MessagesController < ApplicationController
     if @unresolved_traits.count.positive?
       Message.create(body: Question.random_question(@unresolved_traits), conversation: current_conversation, bot: true)
     else
-      suggestion = Location.find_closest_match(@resolved_traits) || ["nothing found"]
+      suggestion = Location.find_closest_match(@resolved_traits)
       Message.create(body: "This should suit you!", conversation: current_conversation, bot: true, suggestions: suggestion)
       # byebug
     end

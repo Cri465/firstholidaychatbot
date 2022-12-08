@@ -1,15 +1,20 @@
 <% if message.bot == true %>
-  <div class="column" id="chat-row">
-    <div class="right floated center aligned ui right pointing label"id="right-chat">
-    <%else%>
-      <div class="column" id="chat-row">
-        <div class="left floated center aligned ui left pointing label"id="left-chat">
-        <%end%>
-        <%= message.body %>
-      </div>
-    </div>
+  <div class="column right" id="chat-row">
     <%if message.suggestions%>
-      <%message.suggestions.each do |suggestion| %>
-        <%=render 'layouts/location_card'%>
-      <%end%>
-    <%end%>
+      <div class="right floated center aligned ui right pointing label"id="suggestions">
+      <%else%>
+        <div class="right floated center aligned ui right pointing label"id="right-chat">
+        <%end%>
+      <%else%>
+        <div class="column left" id="chat-row">
+          <div class="left floated center aligned ui left pointing label"id="left-chat">
+          <%end%>
+          <%= message.body %>
+          <%if message.suggestions%>
+            <div class="ui two column centered grid" id="holiday-tile">
+              <%message.suggestions.each do |suggestion| %>
+                <%=render 'layouts/location_card', object: Location.find(suggestion)%>
+              <%end%>
+            <%end%>
+          </div>
+        </div>
