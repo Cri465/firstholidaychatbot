@@ -1,15 +1,17 @@
 <div class="centered column">
   <div class="ui card" id="location-card">
     <div class="content">
-      <div class="header"><%=object.hotel_name%></div>
-      <div class="meta"><%= "#{object.geodata[:city]}, #{object.geodata[:country]}, #{object.geodata[:continent]}"%></div>
+      <div class="center aligned header"><%=link_to object.hotel_name, "/locations/#{object.id}"%></div>
+      <div class="center alignedmeta"><%= "#{object.geodata[:city]}, #{object.geodata[:country]}, #{object.geodata[:continent]}"%></div>
+    </div>
+    <div class="content">
       <div class="description">
-        <p>Cute dogs come in a variety of shapes and sizes. Some cute dogs are cute for their adorable faces, others for their tiny stature, and even others for their massive size.</p>
-        <p>Many people also have their own barometers for what makes a cute dog.</p>
       </div>
-      <div class="extra content">
-        <%=object.star_rating%>
-      </div>
+    </div>
+    <div class="center aligned extra content">
+      <%object.star_rating.times do %>
+        <i class="star icon"></i>
+      <%end%>
     </div>
   </div>
 </div>

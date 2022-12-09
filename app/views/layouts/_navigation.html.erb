@@ -1,8 +1,8 @@
-<%=link_to "First Holiday", root_path, class:"item" %>
-<%=link_to "Wanderer", '/wanderer', class:"item" %>
-<%=link_to "Locations", '/locations', class:"item" %>
+<%=link_to "//FIRST HOLIDAYS", root_path, class:"item", id:"title_header" %>
 <div class="right menu">
   <div class="right menu">
+    <%=link_to "Wanderer", '/wanderer', class:"item" %>
+    <%=link_to "Locations", '/locations', class:"item" %>
     <% if logged_in?%>
       <div class="item">Logged in as <%= current_user.first_name %></div>
       <%= link_to "Log out", logout_path, method: :delete, class:"item"%>
@@ -32,5 +32,6 @@
         </div>
       </div>
     <%end%>
+    <div class="item"><i class="search icon"></i></div>
   </div>
 </div>

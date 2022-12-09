@@ -22,3 +22,40 @@ body{
     font-size: 4em;
     font-weight: normal;
 }
+
+.splash {
+  background-image: image-url("blueskies-15.png");
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+}
+
+#title_header{
+  font-family: 'Unbounded';
+  font-weight: bolder;
+  font-size: large;
+}
+#huge-header{
+  font-family: 'Permanent Marker', cursive;
+  font-size: 6rem;
+  margin: 0;
+  position: absolute;
+  top: 45%;
+  left: 50%;
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+  color: #ffe245;
+}
+#intro-blurb{
+  text-align: center;
+  font-size: 1.2rem;
+  margin: 0;
+  position: absolute;
+  top: 60%;
+  left: 50%;
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  text-shadow: -1px 0 grey, 0 1px grey, 1px 0 grey, 0 -1px grey;
+  color: white;
+}

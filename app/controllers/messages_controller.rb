@@ -20,7 +20,7 @@ class MessagesController < ApplicationController
     intents.each do |intent|
       body = case
              when @resolved_traits.values.include?(intent["name"])
-               generic_response
+               # ??
              when intent["name"].include?("activity")
                active_resolution(intent["name"])
              when intent["name"].include?("climate")
@@ -33,10 +33,6 @@ class MessagesController < ApplicationController
     end
     update_traits
     reply
-  end
-
-  def generic_response
-    "bones"
   end
 
   def active_resolution(intent)
@@ -69,7 +65,6 @@ class MessagesController < ApplicationController
     else
       suggestion = Location.find_closest_match(@resolved_traits)
       Message.create(body: "This should suit you!", conversation: current_conversation, bot: true, suggestions: suggestion)
-      # byebug
     end
   end
 end

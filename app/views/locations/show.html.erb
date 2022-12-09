@@ -10,15 +10,14 @@
       <%= "#{@location.traits[:activity].capitalize()}, #{@location.traits[:climate].capitalize()}, #{@location.traits[:location].capitalize()}"%>
     </div>
     <div class="description">
-      <p>Cute dogs come in a variety of shapes and sizes. Some cute dogs are cute for their adorable faces, others for their tiny stature, and even others for their massive size.</p>
-      <p>Many people also have their own barometers for what makes a cute dog.</p>
+      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eos, quibusdam quasi vero autem corrupti qui facere temporibus consequatur veniam ea sint asperiores laboriosam unde tenetur dolores dicta numquam modi libero minus eveniet expedita magni in. Ad, omnis. Enim, cum exercitationem.</p>
     </div>
     <div class="center aligned extra content">
       <p><%@location.star_rating.times do %>
           <i class="star icon"></i>
         <%end%></p>
       <br>
-      <p>v pricey</p>
+      <p><%="£#{@location.price_per_night} per night"%></p>
     </div>
   </div>
 </div>

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_12_07_161852) do
+ActiveRecord::Schema.define(version: 2022_12_09_100120) do
 
   create_table "conversations", force: :cascade do |t|
     t.integer "user_id"
@@ -27,6 +27,7 @@ ActiveRecord::Schema.define(version: 2022_12_07_161852) do
     t.integer "state", default: 1
     t.integer "star_rating", default: 1
     t.string "traits", default: "{}"
+    t.integer "price_per_night"
   end
 
   create_table "messages", force: :cascade do |t|

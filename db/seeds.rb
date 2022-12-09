@@ -8,5 +8,6 @@ seed_data.each do |entry|
   location.traits = "{activity: '#{entry['Category']||'nil'}', climate: '#{entry['TempRating']||'nil'}', location: '#{entry['Location']||'nil'}'}"
   location.geodata = "{city: '#{entry['City']||'nil'}', country: '#{entry['Country']||'nil'}', continent: '#{entry['Continent']||'nil'}'}"
   location.star_rating = entry["StarRating"]
+  location.price_per_night = entry["PricePerPerNight"]
   location.save!
 end

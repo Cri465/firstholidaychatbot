@@ -10,12 +10,13 @@
     <%= csp_meta_tag %>
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Permanent+Marker&family=Unbounded:wght@200;300;400;500&display=swap" rel="stylesheet">
   </head>
   <body>
     <div class="ui inverted menu large" id="nav-bar">
-      <div class="ui container">
-        <%= render 'layouts/navigation' %>
-      </div>
+      <%= render 'layouts/navigation' %>
     </div>
     <div class="ui container"style="margin-top: 2rem;">
       <%= render 'layouts/statusmessages'%>
